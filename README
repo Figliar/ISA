@@ -1,0 +1,41 @@
+# Discord bot v C++ #
+
+HTTP klient využívajúci Discord Rest API (https://discord.com/api) a OpenSSL.
+
+Program reaguje na správy uživateľov na kanále kde sa nachádza bot,
+ktorého token bol zadaný ako argument. Odpovedá iba na správy uživateľov,
+ktorý v mene nemaju podreťazec "bot".
+
+Pred spustením:
+$ make clean (dobrovoľné)
+$ make
+
+Pre test argumentov (Funguje len kde je bash):
+$ make test 
+
+Možné argumenty:
+	Spustenie programu bez parametrov zobrazí nápovedu.
+    	-h|--help : Vypíše nápovedu na štandardný výstup.
+	-v|--verbose : Bude zobrazovať správy, na ktoré bot reaguje na štandardný výstup vo formáte "<channel> - <username>: <message>".
+	-t <bot_access_token> : Tu je nutné zadať autentizačný token pre prístup bota na Discord.
+	
+Program sa spúšťa:
+./isabot (argumenty v ľubovoľnom poradí, okrem -t <token>, tie musia nasledovať za sebou)
+
+napr.
+ 	$ ./isabot -t <token> -v
+	$ ./isabot -h
+	$ ./isabot -v -t <token>
+	$ ./isabot --verbose -t <token>
+
+Program akceptuje aj dlhé argumenty ako --v, --ve, --ver, --verb, --verbo, --verbos, --h, --he, --hel
+
+
+Odovzdané súbory:
+- main.cpp
+- almost_json_pars.cpp
+- almost_json_pars.h
+- Makefile
+- README
+- manual.pdf
+- arguments_test
