@@ -1,0 +1,42 @@
+Popis varianty:
+Vytvořte program isabot, který bude působit jako bot na komunikační službě Discord. Bot se připojí na Discord server na kanál "#isa-bot" a bude reagovat na všechny zprávy zaslané ostatními uživateli. Bot bude fungovat jako echo pro všechny zprávy, které zachytí. V případě, že bot na daném kanále zachytí jakoukoli zprávu jiného uživatele (tedy jinou než svou vlastní) a zároveň, která není jiného bota (uživatelské jméno neobsahuje podřetězec "bot"), odešle tuto zprávu zpátky na kanál a to ve formátu "echo: <username> - <message>" (kde <username> představuje uživatelské jméno uživatele, který odeslal původní zprávu).
+
+Kdekoli v zadání, kde uvidíte <nejaky_label>, uvažujte vždy výstup bez znaků "<" a ">".
+
+Při vytváření programu je povoleno použít pouze hlavičkové soubory pro práci se sokety a další obvyklé funkce používané v síťovém prostředí (jako je netinet/*, sys/*, arpa/*, openssl/* apod.), knihovnu pro práci s vlákny (pthread), signály, časem, stejně jako standardní knihovnu jazyka C (varianty ISO/ANSI i POSIX), C++ a STL. Jiné knihovny nejsou povoleny.
+
+Spuštění programu
+Použití: isabot [-h|--help] [-v|--verbose] -t <bot_access_token>
+
+Pořadí parametrů je libovolné. Popis parametrů:
+
+    Spuštění programu bez parametrů zobrazí nápovědu.
+    -h|--help : Vypíše nápovědu na standardní výstup.
+    -v|--verbose : Bude zobrazovat zprávy, na které bot reaguje na standardní výstup ve formátu "<channel> - <username>: <message>".
+    -t <bot_access_token> : Zde je nutno zadat autentizační token pro přístup bota na Discord.
+
+Ukončení programu proběhne zasláním signálu SIGINT (tedy například pomocí kombinace kláves Ctrl + c), do té doby bude bot vykonávat svou funkcionalitu.
+
+
+Doplňující informace k zadání
+
+    Před odevzdáním projektu si důkladně pročtěte společné zadání pro všechny projekty.
+    Jakékoliv rozšíření nezapomeňte zdůraznit v souboru README a v dokumentaci. Není však možné získat více bodů, než je stanovené maximum.
+    Program se musí vypořádat s chybnými vstupy.
+    Veškeré chybové výpisy vypisujte srozumitelně na standardní chybový výstup.
+    Pokud máte pocit, že v zadání není něco specifikováno, popište v dokumentaci vámi zvolené řešení a zdůvodněte, proč jste si jej vybrali.
+    V dokumentaci uveďte, jaké chybové zprávy váš program generuje a za jakých okolností.
+    Vytvořený kód by měl být modulární a otestovaný. Testy, které jste při řešení projektu napsali, se spustí voláním "make test".
+    Při řešení projektu uplatněte znalosti získané v dřívějších kurzech týkající se jak zdrojového kódu (formátování, komentáře), pojmenování souborů, tak vstřícnosti programu k uživateli.
+
+Referenční Discord server
+Pro vývoj a testování projektu využijte standardní Discord server dostupný na (discord.com). Při hodnocení projektu bude taktéž použit server založený na discord.com.
+
+Při procesu vytváření a připojení bota následujte návod (zde), a pak následně pro komunikaci oficiální dokumentaci pro vývojáře pro Discord (viz Doporučená literatura).
+
+Nastavení, se kterými bude projekt opravovat, budou zahrnovat:
+Rozsahy (scopes): bot
+Práva bota (Bot permissions): View Channels, Embed Links, Read Message History
+
+Referenční prostředí pro překlad a testování
+Program by měl být přenositelný. Referenční prostředí pro překlad budou servery eva.fit.vutbr.cz a merlin.fit.vutbr.cz (program musí být přeložitelný a funkční na obou systémech). Vlastní testování může probíhat na jiném počítači s nainstalovaným OS GNU/Linux, či FreeBSD, včetně jiných architektur než Intel/AMD, jiných distribucí, jiných verzí knihoven apod. Pokud vyžadujete minimální verzi knihovny (dostupné na serveru merlin a eva), jasně tuto skutečnost označte v dokumentaci a README.
